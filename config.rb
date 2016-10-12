@@ -1,4 +1,4 @@
-css_dir = '_/css'
-sass_dir = '_/components/sass'
-javascripts_dir = '_/js'
+css_dir = 'assets/css'
+sass_dir = 'assets/components/sass'
+javascripts_dir = 'assets/js'
 output_style = :nested
