@@ -1,0 +1,20 @@
+// This is a single scss files just for importing other files.
+
+
+// tools (if you want to use bourbon add here)
+@import '1-tools/normalize';
+@import '1-tools/fonts';
+@import '1-tools/vars';
+
+
+
+// basics styles for entire site
+@import '2-basics/body';
+@import '2-basics/typography';
+@import '2-basics/selection';
+@import '2-basics/links';
+@import '2-basics/buttons';
+
+
+// insert specific page styles right here
+@import '3-pages/home-page';

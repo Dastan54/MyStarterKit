@@ -2,6 +2,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.initConfig({
 		uglify : {
@@ -19,7 +20,17 @@ module.exports = function(grunt){
 				} //options
 			} //dev
 		}, //compass
-
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: 'assets/css',
+					src: ['*.css', '!*.min.css'],
+					dest: 'assets/css',
+					ext: '.min.css'
+				}]
+			}
+		}, //cssmin
 		watch: {
 			options: { livereload: true },
 			scripts: {
@@ -29,13 +40,13 @@ module.exports = function(grunt){
 			
 			html: {
 				files : ['*.html'],
-			}, //html
-
+			},
 			sass: {
-				files: ['assets/components/sass/*.scss'],
+				files: ['assets/components/sass/1-tools/*.scss'],
+				files: ['assets/components/sass/2-basics/*.scss'],
+				files: ['assets/components/sass/3-pages/*.scss'],
 				tasks: ['compass:dev']
-			} //sass
-
+			}, //sass	
 		} //watch
 	}) //initConfig
 
